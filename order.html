@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Оформление заявки">
+  <title>Заявка — Учебный интернет-магазин</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="index.html">ShopProject</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li><a class="site-nav__link site-nav__link--active" href="order.html">Заявка</a></li>
+          <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <h1 class="section__title">Оформление заявки</h1>
+      <p>Заполните форму, и мы свяжемся с вами.</p>
+
+      <form class="order-form" action="#" method="post" style="max-width: 500px;">
+        <div class="form-field">
+          <label for="name">Имя</label>
+          <input id="name" name="name" type="text" minlength="2" required>
+        </div>
+
+        <div class="form-field">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+
+        <div class="form-field">
+          <label for="phone">Телефон</label>
+          <input id="phone" name="phone" type="tel"
+                 placeholder="+7 (900) 000-00-00"
+                 pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+          <small>Формат: +7 (900) 000-00-00</small>
+        </div>
+
+        <div class="form-field">
+          <label for="topic">Тема заявки</label>
+          <select id="topic" name="topic" required>
+            <option value="">Выберите тему</option>
+            <option value="product">Заказ товара</option>
+            <option value="consultation">Консультация</option>
+            <option value="delivery">Доставка</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="comment">Комментарий</label>
+          <textarea id="comment" name="comment" rows="4"></textarea>
+        </div>
+
+        <div class="form-field">
+          <label>
+            <input type="checkbox" name="agreement" required>
+            Я согласен на обработку данных
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit">Отправить заявку</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Учебный проект</p>
+    </div>
+  </footer>
+
+  <a href="#" class="button-up" title="Наверх">↑</a>
+
+</body>
+</html>

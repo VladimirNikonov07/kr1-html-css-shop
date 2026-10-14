@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Каталог товаров">
+  <title>Каталог — Учебный интернет-магазин</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="index.html">ShopProject</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li><a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a></li>
+          <li><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <h1 class="section__title">Каталог товаров</h1>
+
+      <div class="catalog-layout">
+        <aside class="catalog-filters">
+          <h2 class="catalog-filters__title">Категории</h2>
+          <ul class="catalog-filters__list">
+            <li class="catalog-filters__item"><a href="#">Все товары</a></li>
+            <li class="catalog-filters__item"><a href="#">Ноутбуки</a></li>
+            <li class="catalog-filters__item"><a href="#">Наушники</a></li>
+            <li class="catalog-filters__item"><a href="#">Клавиатуры</a></li>
+            <li class="catalog-filters__item"><a href="#">Аксессуары</a></li>
+          </ul>
+        </aside>
+
+        <div class="products-grid">
+          <article class="product-card">
+            <span class="product-card__badge product-card__badge--hit">Хит</span>
+            <img src="images/laptop.jpg" alt="Ноутбук Pro 15">
+            <h3 class="product-card__title">Ноутбук Pro 15</h3>
+            <p class="product-card__description">Мощный ноутбук для учёбы и работы.</p>
+            <p class="product-card__price">45 990 ₽</p>
+            <div class="product-card__actions">
+              <a class="button button--secondary" href="product.html">Подробнее</a>
+              <button class="button product-card__button" type="button" data-product="Ноутбук Pro 15">Заказать</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="product-card__badge product-card__badge--new">Новинка</span>
+            <img src="images/headphones.jpg" alt="Беспроводные наушники">
+            <h3 class="product-card__title">Беспроводные наушники</h3>
+            <p class="product-card__description">Удобные наушники с хорошим звуком.</p>
+            <p class="product-card__price">7 490 ₽</p>
+            <div class="product-card__actions">
+              <a class="button button--secondary" href="product.html">Подробнее</a>
+              <button class="button product-card__button" type="button" data-product="Беспроводные наушники">Заказать</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="images/keyboard.jpg" alt="Механическая клавиатура">
+            <h3 class="product-card__title">Механическая клавиатура</h3>
+            <p class="product-card__description">Клавиатура для работы и игр.</p>
+            <p class="product-card__price">5 990 ₽</p>
+            <div class="product-card__actions">
+              <a class="button button--secondary" href="product.html">Подробнее</a>
+              <button class="button product-card__button" type="button" data-product="Механическая клавиатура">Заказать</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="images/mouse.jpg" alt="Мышь беспроводная">
+            <h3 class="product-card__title">Мышь беспроводная</h3>
+            <p class="product-card__description">Эргономичная мышь для работы.</p>
+            <p class="product-card__price">2 490 ₽</p>
+            <div class="product-card__actions">
+              <a class="button button--secondary" href="product.html">Подробнее</a>
+              <button class="button product-card__button" type="button" data-product="Мышь беспроводная">Заказать</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Учебный проект</p>
+    </div>
+  </footer>
+
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <h2 id="order-dialog-title">Оформление заявки</h2>
+    <form class="order-form" id="order-form" action="#" method="post" novalidate>
+      <input id="selected-product" name="selected-product" type="hidden">
+      <div class="form-field">
+        <label for="order-name">Имя</label>
+        <input id="order-name" name="name" type="text" minlength="2" required>
+      </div>
+      <div class="form-field">
+        <label for="order-email">E-mail</label>
+        <input id="order-email" name="email" type="email" required>
+      </div>
+      <div class="form-field">
+        <label for="order-phone">Телефон</label>
+        <input id="order-phone" name="phone" type="tel" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+        <small>Формат: +7 (900) 000-00-00</small>
+      </div>
+      <div class="form-field">
+        <label for="order-topic">Тема</label>
+        <select id="order-topic" name="topic" required>
+          <option value="">Выберите тему</option>
+          <option value="product">Заказ товара</option>
+          <option value="consultation">Консультация</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>
+          <input type="checkbox" name="agreement" required>
+          Я согласен на обработку данных
+        </label>
+      </div>
+      <div class="form-actions">
+        <button type="button" id="close-order-dialog" class="button button--secondary">Закрыть</button>
+        <button type="submit">Отправить</button>
+      </div>
+    </form>
+  </dialog>
+
+  <p class="success-message" id="success-message" hidden>Форма успешно отправлена!</p>
+  <a href="#" class="button-up" title="Наверх">↑</a>
+
+</body>
+</html>
